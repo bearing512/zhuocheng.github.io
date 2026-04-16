@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>武当轴承的菜园子</title>
+<!-- 导入bootstrap -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">  
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  <!-- 导入自己的CSS -->
+  <link rel="stylesheet" href="css/mycss.css" type="text/css"> 
+  
+</head>
+<body>
+
+<!-- 页头-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="mainpage.html">首页</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">技术文档<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_gan.html">生成对抗网络</a>
+								</li>
+								<li>
+									 <a href="sharing_il.html">非均衡学习</a>
+								</li>
+								<li>
+									 <a href="sharing_gan_other.html">基于深度生成模型自动测试</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="sharing_3gpp.html">3GPP协议汇总</a>
+									 <a href="sharing_http_status_code.html">HTTP State Code</a>
+									 <a href="sharing_5g_basic.html">5G基础</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">有间杂货铺<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_laodongfa.html">一点劳动法</a>
+								</li>
+								<li>
+									 <a href="sharing_erlang.html">关于erlang</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="active">
+							 <a href="resume.html">个人简历</a>
+						</li>					
+					</ul>									
+				</div>				
+			</nav>
+		</div>
+    </div>
+</div>
+
+<!-- 5g basic-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				5G基础
+			</h3>
+			<hr>
+			<h4>为啥要5g，EMBB, MMTC And URLLC</h4>
+			<ul>
+				<li>增强型移动宽带 eMBB</li>
+  				<li>超可靠和低延迟痛惜  uRLLC，工业自动化，生产流程的控制，自动驾驶</li>
+ 				<li>大规模机器类型通信 mMTC，连接设备数量庞大，设备成本降低</li>
+			</ul>		
+			<p>eMBB (Enhanced Mobile Broadband)10Gbps 的速率, mMTC (massive Machine Type Communication) 海量连接数，uRLLC (Ultra-Reliable Low Latency Communication)时延低。按照我的理解，2g解决的是基础通信的问题，打电话，发短信，发彩信这些。等到3g的时候，这时候拿着手机已经可以冲浪了。等到了4g的时候，能够传输高质量视频图像，在智能手机上就能连接世界。等到了5g的时候就为了一统天下，智能社会。为啥嘛，因为可靠，速度快，带宽高，还便宜啊【虽然现在还不便宜T.T】。</p>
+			<h4>基础架构</h4>
+			<img src="pic/5g1.png" alt="image" class="img-responsive center-block" width="50%">
+			<p>这张图上从23501上抄的，简单的来说，4GMME 专注于移动性管理，SGW 和 PGW 共同进行会话管理和数据传输，整个网络控制与承载分离，呈扁平化结构,等到了5G的时候，控制面和用户面的彻底分离，传统网元被拆分为多个网络功能NF。AMF：负责用户的移动性和接入管理，SMF：负责用户会话管理功能，UDM负责前台数据的同一处理，包括用户标识、用户签约数据、鉴权数据等，AUSF配合UDM专门负责用户鉴权数据相关的处理等等</p>
+			<img src="pic/5g2.png" alt="image" class="img-responsive center-block" width="50%">
+			<p>上图清晰的描述了周边的网元及其基本的功能，转自网络，侵权我删就是了。</p>
+			<h4>协议栈</h4>
+			<p>n1 n2 协议栈</p>
+			<img src="pic/n1n2.png" alt="image" class="img-responsive center-block" width="50%">
+			<p>NAS-MM: NAS-MM协议负责注册管理、连接管理、用户面连接的激活和去激活操作，负责NAS消息的加密和完整性保护。</p>
+			<p>sbi 接口协议栈</p>
+			<img src="pic/sbi.png" alt="image" class="img-responsive center-block" width="10%">
+			<p>5GC内部网元之间的接口为SBI接口，采用HTTP2服务的形式.</p>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- 页脚-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<h3>
+			联系我 
+		</h3>
+		<hr>
+		<ul >
+			<li type=square>mail:bearing512@foxmail.com</li>
+			<li type=square>wechat:zc_zoro</li>
+		</ul>
+		 <div style="text-align:center">
+		 	<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31012002005714" style="display:inline-block"><img src="pic/beiantubiao.png" style="float:left;"/>沪公网安备 31012002005714号</a>  <a href="http://beian.miit.gov.cn/">沪ICP备2023007215号-1</a></p>
+		 	<p>Copyright © 2023 ibearing.top. All rights reserved.</p>
+		 </div>	            
+	</div>
+</div>
+
+</body>
+</html>

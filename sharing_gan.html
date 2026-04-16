@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>武当轴承的菜园子</title>
+<!-- 导入bootstrap -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">  
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  <!-- 导入自己的CSS -->
+  <link rel="stylesheet" href="css/mycss.css" type="text/css"> 
+  
+</head>
+<body>
+
+<!-- 页头-->
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+      <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="mainpage.html">首页</a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">           
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">技术文档<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li>
+                   <a href="sharing_gan.html">生成对抗网络</a>
+                </li>
+                <li>
+                   <a href="sharing_il.html">非均衡学习</a>
+                </li>
+                <li>
+                   <a href="sharing_gan_other.html">基于深度生成模型自动测试</a>
+                </li>
+                <li class="divider">
+                </li>
+                <li>
+                   <a href="sharing_3gpp.html">3GPP协议汇总</a>
+                   <a href="sharing_http_status_code.html">HTTP State Code</a>
+                   <a href="sharing_5g_basic.html">5G基础</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">有间杂货铺<strong class="caret"></strong></a>
+              <ul class="dropdown-menu">
+                <li>
+                   <a href="sharing_laodongfa.html">一点劳动法</a>
+                </li>
+                <li>
+                   <a href="sharing_erlang.html">关于erlang</a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="active">
+               <a href="resume.html">个人简历</a>
+            </li>         
+          </ul>                 
+        </div>        
+      </nav>
+    </div>
+    </div>
+</div>
+
+<!-- 主内容-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">     
+			<h3>
+				生成对抗网络
+			</h3>
+      <p>我强烈推荐你看<a href="https://arxiv.org/abs/1711.05914">How generative adversarial networks and their variants work: An overview</a> </p>
+			<hr>
+			<h5>1生成模型和判别模型</h5>
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width=542
+ style='width:406.6pt;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;page-break-inside:avoid;
+  height:27.25pt'>
+  <td width=76 valign=top style='width:56.85pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:27.25pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span lang=EN-US style='mso-bidi-font-size:11.0pt;
+  mso-font-kerning:1.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=228 style='width:171.3pt;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>判别模型</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=238 style='width:178.45pt;border:solid windowtext 1.0pt;border-left:
+  none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:27.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>生成模型</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;page-break-inside:avoid;height:39.25pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:39.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>特点</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=228 style='width:171.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:39.25pt'>
+  <p class=MsoNormal style='layout-grid-mode:char;mso-layout-grid-align:none'><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>寻找不同类别之间的最优分类面，反映的是不同类数据之间的差异</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=238 style='width:178.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:39.25pt'>
+  <p class=MsoNormal style='layout-grid-mode:char;mso-layout-grid-align:none'><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>对后验概率建模，表示数据的分布情况，能够反映同类数据本身的相似度</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;page-break-inside:avoid;height:34.85pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:34.85pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>区别</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=466 colspan=2 style='width:349.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:34.85pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>以</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'>x</span><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>作为为输出，</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'>y</span><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>作为标签，判别模型估计的是条件概率分布,生成模型估计的是联合概率分布
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;page-break-inside:avoid;height:24.45pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:24.45pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>联系</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=466 colspan=2 style='width:349.75pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:24.45pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>由生成模型可以得到判别模型，但由判别模型得不到生成模型</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;page-break-inside:avoid;height:24.25pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:24.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>常见模型</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=228 style='width:171.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:24.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>逻辑回归，</span><span class=SpellE><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'>svm</span></span><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>，</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'>k</span><span
+  style='mso-bidi-font-size:11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";
+  mso-hansi-font-family:"Times New Roman";mso-font-kerning:1.0pt'>近邻等</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=238 style='width:178.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:24.25pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span lang=EN-US style='mso-bidi-font-size:
+  11.0pt;mso-font-kerning:1.0pt'>HMMs</span><span style='mso-bidi-font-size:
+  11.0pt;font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>，生成对抗网络等</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;page-break-inside:avoid;height:49.5pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:49.5pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>优点</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=228 style='width:171.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:49.5pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>分类边界更灵活，能清晰的分辨出多类或某一类与其他类之间的差异特征；适用于较多类别的识别</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=238 style='width:178.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:49.5pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>实际上表示的信息丰富；研究单类问题灵活性强；模型可以通过增量学习得到；能用于数据不完整情况</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6;mso-yfti-lastrow:yes;page-break-inside:avoid;
+  height:33.4pt'>
+  <td width=76 style='width:56.85pt;border:solid windowtext 1.0pt;border-top:
+  none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:33.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char;mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>缺点</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=228 style='width:171.3pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:33.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>不能反映训练数据特性，黑盒模型，变量间关系模糊</span><span
+  lang=EN-US style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=238 style='width:178.45pt;border-top:none;border-left:none;
+  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt;height:33.4pt'>
+  <p class=MsoNormal align=left style='text-align:left;layout-grid-mode:char;
+  mso-layout-grid-align:none'><span style='mso-bidi-font-size:11.0pt;
+  font-family:宋体;mso-ascii-font-family:"Times New Roman";mso-hansi-font-family:
+  "Times New Roman";mso-font-kerning:1.0pt'>学习和计算过程比较复杂</span><span lang=EN-US
+  style='mso-bidi-font-size:11.0pt;mso-font-kerning:1.0pt'><o:p></o:p></span></p>
+</table>
+
+			<p>生成模型和判别模型是监督学习的重要分支，现有深度生成模型主要分为四大类，第一类基于GAN以及其变种，第二类基于编码器模型及其变种，以变分自编码器(Variational Autoencoders)为核心，第三类基于Glow Flow的流模型，第四类为自回归模型。</p>
+
+            <p>自回归模型，需要逐像素的采样，无法做到实时采样，且采样速度极慢。基于流的生成模型，在标准基准数据集上的对数似然性有了显著提升，可以有效逼真地对较高像素的图像进行合成和操作。然而，受限于其模型参数量和计算复杂度，使得它和自回归模型一样，未能成为科研方向的主流。而生成对抗网络，相比其他深度生成模型是具有跨时代意义的，正在引领深度学习走向一个新的巅峰，摒弃了复杂的马尔可夫过程和近似估计方法，仅仅采用反向链式求导的方法进行优化，减少了计算的时空开销，提高了生成模型的生成质量。</p>
+
+			<p>自2014年生成对抗网络被提出以来，其在学习高维，复杂的真实数据分布上展现出优越的性能，因而在机器学习领域受到广泛关注。模型好不依赖于任何关于分布的假设，并且可以以简单的方式从潜在空间生成真实样点。这种强大的性能使GAN可以应用于各种应用领域，例如图像合成，图像修复，声音编辑，图像翻译和其他学术领域。</p>
+			
+
+			<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:1184;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes'>
+  <td width=138 valign=top style='width:103.6pt;border:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>领域</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.6pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>课题</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border:solid windowtext 1.0pt;
+  border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>代表模型</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=138 rowspan=4 style='width:103.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>计算机视觉</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>图像修复</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>SRGAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2'>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>目标检测</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>SeGAN</span><span style='font-family:宋体'>，</span><span
+  lang=EN-US>GeneGAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3'>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>视频合成</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>VGAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4'>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>文本到图像</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>StackGAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5'>
+  <td width=138 rowspan=2 style='width:103.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>序列化数据</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>语音音乐合成</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>C-RNN-GAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>文本相关</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>SeqGAN, IRGAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=138 rowspan=2 style='width:103.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>其他领域</span></p>
+  </td>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>半监督学习</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>SSL-GAN</span><span style='font-family:宋体'>，</span><span
+  lang=EN-US>triple GAN</span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td width=138 valign=top style='width:103.6pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span style='font-family:宋体'>信息安全</span></p>
+  </td>
+  <td width=196 valign=top style='width:146.95pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center;layout-grid-mode:
+  char'><span lang=EN-US>MalGAN</span></p>
+  </td>
+ </tr>
+</table>
+<p>附上一些<a href="https://github.com/hwalsuklee/tensorflow-generative-model-collections">gan的源码</a></p>
+
+<h5>2生成对抗网络</h5>
+<hr>
+<p><a href="https://poloclub.github.io/ganlab/">推荐网站 可视化的理解GAN</a></p>
+<p>生成对抗网络的核心思想来源于博弈论，借助生成器Generator(G)和判别器Discriminator(D)之间的博弈和不断优化，使得生成器G能不断的逼近真实的数据分布。判别器D从真实数据集和生成器G生成的数据中随机采样，试图将两类数据正确区分开；而生成器G以某种分布\mathcal{N}随机采样作为输入，进入生成器G中生成样本，输出尽可能逼真的数据集。由此，生成器G和判别器D交替优化，随着模型的不断迭代，判别器D无法有效判别数据集来源于真实的数据分布还是来源于生成器G，模型收敛。
+
+<p>GAN本身是一个无监督学习模型，借助判别器D，使得生成器G从随机噪声Z中以某种分布{N}随机采样作为输入z，最终学习到的数据分布p_G逐渐逼近真实数据分布p_data。然而作为基于零和博弈的构设，模型的两个部分并不是同时进行优化的，一般而言每训练k次判别器再训练一次生成器，其原因在于要避免判别器学习的速度过慢而使得生成器无法得到有效学习。</p>
+
+<h5>3生成对抗网络不足</h5>
+<hr>
+<p>原始生成对抗网络在训练的过程中存在较大的缺陷，体现在梯度弥散，模型崩塌而导致的训练不稳定问题。整个网络必须依靠精心设计的结构，生成器和判别器才能收敛，与此同时，受限于基于JS散度(Jensen-Shannon)的优化问题，样本多样性难以得到解决，即整个训练过程只是训练了的数据集中的一小部分。</p>
+<p>尽管不同的改进模型以及衍生模型都试图提高模型的稳定性和生成器生成的样本质量，但是梯度弥散和模型崩塌问题始终没有得到有效彻底解决。除此之外，在评估模型上，生成对抗网络以随机数据作为输入，在训练的过程中无法准确评估生成的样本质量。</p>
+
+<h5>4.半监督gan的一些总结</h5>
+<hr>
+<p>1.sgan Kingma D P, Mohamed S, Rezende D J, et al. Semi-supervised learning with deep generative models[C]//Advances in neural information processing systems. 2014: 3581-3589.</p>
+<p>2.catgan Springenberg J T. Unsupervised and semi-supervised learning with categorical generative adversarial networks[J]. arXiv preprint arXiv:1511.06390, 2015.</p>
+<p>3.Tim Salimans, Ian Goodfellow, Wojciech Zaremba, Vicki Cheung, Alec Radford, and Xi Chen. 2016. Improved techniques for training GANs. In Advances in Neural Information Processing Systems. Curran Associates, 2234–2242</p>
+<p>4.triple gan Chongxuan L I, Xu T, Zhu J, et al. Triple generative adversarial nets[C]//Advances in neural information processing systems. 2017: 4088-4098</p>
+<p>5.bagan Mariani, G., Scheidegger, F., Istrate, R., Bekas, C., Malossi, C.: BAGAN: data augmentation with balancing GAN. arXiv preprint arXiv:1803.09655 (2018) </p>
+
+<h5>5.文本gan的总结</h5>
+1.SeqGAN，将生成器生成序列样本的类比于强化学习中的序列决策过程，将蒙特卡洛搜索和强化学习的策略梯度(Policy Gradient)引入到对抗学习模型中，试验证明其在诗词、文本生成的表现优于传统方法。
+2.IRGAN使得两大流派的模型能够相互提高，最终使得检索到的文档更加精准
+
+我在复现irgan的时候，我实际结果不怎么样
+seqgan在优化的过程中，很难调参数，我没想到方法有效的调参，所以文本gan的方法在我的科研过程say good bye。
+<h4>个人觉得难点还是在优化，花了好几个月的方向，希望有后来人能做出。</h4>
+
+
+		</div>
+	</div>
+</div>
+
+
+<!-- 页脚-->
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-12 column">
+    <h3>
+      联系我 
+    </h3>
+    <hr>
+    <ul >
+      <li type=square>mail:bearing512@foxmail.com</li>
+      <li type=square>wechat:zc_zoro</li>
+    </ul>
+     <div style="text-align:center">
+      <p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31012002005714" style="display:inline-block"><img src="pic/beiantubiao.png" style="float:left;"/>沪公网安备 31012002005714号</a>  <a href="http://beian.miit.gov.cn/">沪ICP备2023007215号-1</a></p>
+      <p>Copyright © 2023 ibearing.top. All rights reserved.</p>
+     </div>             
+  </div>
+</div>
+
+ 
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>武当轴承的菜园子</title>
+<!-- 导入bootstrap -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">  
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  <!-- 导入自己的CSS -->
+  <link rel="stylesheet" href="css/mycss.css" type="text/css"> 
+  
+</head>
+<body>
+
+<!-- 页头-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="mainpage.html">首页</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">技术文档<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_gan.html">生成对抗网络</a>
+								</li>
+								<li>
+									 <a href="sharing_il.html">非均衡学习</a>
+								</li>
+								<li>
+									 <a href="sharing_gan_other.html">基于深度生成模型自动测试</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="sharing_3gpp.html">3GPP协议汇总</a>
+									 <a href="sharing_http_status_code.html">HTTP State Code</a>
+									 <a href="sharing_5g_basic.html">5G基础</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">有间杂货铺<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_laodongfa.html">一点劳动法</a>
+								</li>
+								<li>
+									 <a href="sharing_erlang.html">关于erlang</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="active">
+							 <a href="resume.html">个人简历</a>
+						</li>					
+					</ul>									
+				</div>				
+			</nav>
+		</div>
+    </div>
+</div>
+
+			
+<!-- 描述-->
+<div class="container">
+	<div class="row clearfix">
+	<div class="col-md-12 column">
+			<h3>
+				关于gan我做过的一些小东西 
+			</h3>
+			<hr>
+			<h4>拟合数据分布</h4>
+			<p>
+				<ul>
+				<li>理论上，假设数据集服从某个分布X，那么学习器就可以拟合这个这个概率分布p(X)。绝大多数的情况下，gan都被学习连续性的数据分布而不是离散型的数据分布。</li>
+				<li>离散数值型变量不能被原始生成对抗网络的原因在于，其一，数值型变量在特征间存在较大的差异会使得模型震荡；其二，离散变量不利于生成对抗网络进行后续的优化方法;其三将离散型变量转化成连续性其实是伪连续，没有实际意义，有不可解释性在里面。</li>
+				</ul>
+			<p>我尝试将离散的数据，把所有特征映射到（0，1）区间，将他们作为数据喂给gan，理论上学习器学习到特征之后，后面我可以基于这个学习到的概率分布p(X)，无所欲为。</p>
+			<p>实际上的效果没有这么理想，gan的训练过程不可可视化，只能在后续的应用中去验证模型是否有效。本质上解决模型崩塌和梯度弥散问题，尽管精心设计了网络的结构和参数，但是的网络依然存在着难以训练的问题。我只能说可行的想法，并且我花了3个月调参数做出来一套能用的模型，但是广泛应用的话调参数会很花时间。</p>
+			<hr>
+			<h4>自动生成通信测试用例</h4>
+			<hr>
+			<p>通信行业往往是一个个ie往消息里面，但是实际上有些ie就是可以在不同的消息用的，并且用法和含义并无二致。</p>
+			<p>所以如果能将的之前的case向量化之后，再写少量的新case，理论上学习到case 的概率分布之后，后面的case 可以让模型用自主的找不同的方式完成</p>
+		    <p>我遇到2个问题
+		    	<ul>
+		    		<li>通信有些消息里面的ie 是可选的，如果用带不到的话忽略，有些ie的不同会明确导致不同的行为，第一批case 还是要自己自己挑选</li>
+		    		<li>哪怕一个初始注册流程，消息里的ie就很多，向量化会很长，纬度很大，有些ie是测试点，但是因为测试 case 少，模型直接当成离群点无视之</li>
+		    	</ul>
+		    </p>			
+	</div>
+	</div>
+</div>
+
+<!-- 页脚-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<h3>
+			联系我 
+		</h3>
+		<hr>
+		<ul >
+			<li type=square>mail:bearing512@foxmail.com</li>
+			<li type=square>wechat:zc_zoro</li>
+		</ul>
+		 <div style="text-align:center">
+		 	<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31012002005714" style="display:inline-block"><img src="pic/beiantubiao.png" style="float:left;"/>沪公网安备 31012002005714号</a>  <a href="http://beian.miit.gov.cn/">沪ICP备2023007215号-1</a></p>
+		 	<p>Copyright © 2023 ibearing.top. All rights reserved.</p>
+		 </div>	            
+	</div>
+</div>
+
+ 
+</body>
+</html>

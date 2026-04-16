@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>武当轴承的菜园子</title>
+<!-- 导入bootstrap -->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">  
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  <!-- 导入自己的CSS -->
+  <link rel="stylesheet" href="css/mycss.css" type="text/css"> 
+  
+</head>
+<body>
+
+<!-- 页头-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button> <a class="navbar-brand" href="mainpage.html">首页</a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">						
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">技术文档<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_gan.html">生成对抗网络</a>
+								</li>
+								<li>
+									 <a href="sharing_il.html">非均衡学习</a>
+								</li>
+								<li>
+									 <a href="sharing_gan_other.html">基于深度生成模型自动测试</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="sharing_3gpp.html">3GPP协议汇总</a>
+									 <a href="sharing_http_status_code.html">HTTP State Code</a>
+									 <a href="sharing_5g_basic.html">5G基础</a>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							 <a href="#" class="dropdown-toggle" data-toggle="dropdown">有间杂货铺<strong class="caret"></strong></a>
+							<ul class="dropdown-menu">
+								<li>
+									 <a href="sharing_laodongfa.html">一点劳动法</a>
+								</li>
+								<li>
+									 <a href="sharing_erlang.html">关于erlang</a>
+								</li>
+								
+							</ul>
+						</li>
+						<li class="active">
+							 <a href="resume.html">个人简历</a>
+						</li>					
+					</ul>									
+				</div>				
+			</nav>
+		</div>
+    </div>
+</div>
+
+			
+
+
+
+<!-- 关于erlang-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3>
+				关于erlang
+			</h3>
+			<p>工作之后，我反而不这么在乎语言，CS和EE还是要以解决实际问题结果导向，数据结构和算法这些内功才是正道，我悟了？</p>
+			<hr>
+			<p>
+				我是看这两本书入门的，<a href="https://erldoc.com/doc/pdf/Erlang%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1(%E7%AC%AC2%E7%89%88).pdf">erlang程序设计第二版</a>和<a href="https://github.com/zouhuigang/book/blob/master/Erlang%E7%BC%96%E7%A8%8B%E6%8C%87%E5%8D%97.pdf">erlang编程指南</a>，个人觉得完全为了混饭吃的话，把eralng的基本数据结构，高阶函数，lists:foldl和尾递归理解全就可以上手了，其他的用到什么查什么，附上<a href="https://erldoc.com/">OTP中文手册</a>。</p>
+			<p>附上一个可以在线刷题的<a href="https://www.cainiaojc.com/tool/erlang/index.html">网站</a>。</p>
+
+			<h4>关于第一份工作选erlang的纠结</h4>
+			<p>
+				<ul>
+					<li>反正去面试前，我是不知道这门语言的</li>
+					<li>面试完再百度了一下，除了通信行业，只能做游戏，只是觉得受众面也太小了吧</li>
+					<li>同门当时问我，“如果被开掉了，你咋办啊”，我当时是懵的，无言以对，现如今在准备转型的时候还是觉得事实如此...</li>
+				</ul>
+			</p>
+			<p>这大概就是erlang现状了，函数编程，非面向对象语言，在中国受众面小，贴吧论坛信息少，但是对刚毕业的我去理解大型系统和分布式是不错滴选择。</p>
+			<p>其实在云和container的概念盛行的背景下，erlang 比起c和c++运行速度慢的缺点会逐步的淡化，只是不知道erlang在国内的流行会在什么时候。</p>
+			<hr>
+            <h4>erlang还是Niubility</h4>
+            <p>
+				<ul>
+					<li>通信网络要求99.9999%不能出错，换算成一年的时间，也就在升级的时候最多允许你有个1s宕机了不起了。</li>
+				    <li>erlang就自带分布式。世界是并发的，进程之间不共享数据，进程之间依靠消息进行通信，如果出现故障那就隔离错误,erlang就是这么做的</li>
+					<li>一些牛逼的应用，配上github食用更加，<a href="https://github.com/erlyaws/yaws">yaws</a>，<a href="https://github.com/processone/ejabberd">ejabberd</a></li>
+				</ul>
+			</p>
+			<p>附上一些看过erlang有趣的东西
+                 <ul>
+                 	<li><a href="https://blog.51cto.com/nxlhero/1105545">erlang 递归与尾递归</a></li>
+                 	<li><a href="https://stackoverflow.com/questions/28493453/which-is-more-efficent-among-ets-and-mnesia">ets 和mnesia性能比较</a></li>
+                 	<li>5g消息收发：<a href="https://github.com/ninenines/cowboy">cowboy</a> and <a href="https://github.com/ninenines/gun">gun</a></li>
+				</ul>
+			</p>
+
+		</div>
+	</div>
+</div>
+
+<!-- 页脚-->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+		<h3>
+			联系我 
+		</h3>
+		<hr>
+		<ul >
+			<li type=square>mail:bearing512@foxmail.com</li>
+			<li type=square>wechat:zc_zoro</li>
+		</ul>
+		 <div style="text-align:center">
+		 	<p><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31012002005714" style="display:inline-block"><img src="pic/beiantubiao.png" style="float:left;"/>沪公网安备 31012002005714号</a>  <a href="http://beian.miit.gov.cn/">沪ICP备2023007215号-1</a></p>
+		 	<p>Copyright © 2023 ibearing.top. All rights reserved.</p>
+		 </div>	            
+	</div>
+</div>
+
+ 
+</body>
+</html>
